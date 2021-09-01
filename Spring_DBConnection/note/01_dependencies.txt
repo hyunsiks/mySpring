@@ -1,0 +1,14 @@
+01_dependencies.txt
+
+# 이 프로젝트에서 사용한 다른 프로젝트들(라이브러리들)
+
+	- lombok
+	- JUnit
+	
+	- HikariCP
+	- Log4j
+	- Loog4jdbc
+	- Spring-tx
+	- Spring-jdbc
+	- mybatis
+	- mybatis-spring

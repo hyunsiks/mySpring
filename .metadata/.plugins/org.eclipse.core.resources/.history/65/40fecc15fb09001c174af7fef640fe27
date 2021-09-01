@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+
+const board_commentId = document.getElementById("board_commentId");
+board_commentId.onsubmit = (e) => {
+	e.preventDefault();
+	var board_comment = this.board_commnet.value;
+	var user_id = this.user_id.value;
+	var user_id2 = '<%=(String)session.getAttribute("id")%>'
+	var qna_id = '<%=(String)session.getAttribute("qna_view")%>'
+	console.log(board_comment);
+	console.log(user_id);
+	console.log(user_id2);
+	console.log(qna_id);
+	
+	if(user_id == ''){
+		alert("로그인이 필요한 서비스입니다.");
+//		location.href = "../site/login";
+	} else{
+		console.log("들어옴");
+//		insertCommnet(board_id, user_id, board_comment)
+	}
+	this.board_commnet.value = '';
+	
+}

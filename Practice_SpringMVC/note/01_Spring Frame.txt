@@ -1,0 +1,70 @@
+01_Spring Framework.txt
+
+# 프레임워크란?
+
+ - 프로젝트 개발에 필요한 전체적인 구조를 이미 만들어 놓은 것
+ - 개발자는 이미 완성된 프로젝트 구조에 빈칸만 채우는 형식으로 개발을 진행하게 된다
+ - 어느정도 수준의 품질이 향상 보장된다는 장점이 있다
+ - 개발 시간도 많이 단축된다
+ 
+# 스프링 프레임워크
+
+ - 자바를 활용해 웹개발을 편리하게 진행하기위한 프레임워크
+ - 자바의 다양한 디자인 패턴들이 이미 적용되어 있다
+ 
+# 스프링의 주요 특징
+
+ 1. POJO (Plain Old Java Project)
+ 	- JSP처럼 새로운 문법을 사용해야하는 JAVA의 사용을 지양한다.
+	- 백엔드에 JSP를 이용하지 않고 순수 JAVA를 활용하려고 노력한다.
+	- 익숙치 않은 별도의 API를 사용하지 않음으로써 개발자의 혼란을 최소화한다.
+
+ 2. 의존성 주입 (DI, Dependency Injection)
+ 	- 생성자를 사용하지 않아도 알아서 인스턴스를 생성해 코드를 마저 완성해준다.
+ 	- new를 사용하는 코드를 잘 사용하지 않는다
+ 	※의존성? -> Bus클래스를 구성하기위해 Tire클래스가 필요하다(즉, 버스에 타이어의 의존성주입)
+ 	*Bus.java
+ 	
+ 	class Bus{
+ 		Tire[] tires = new Tire[4];
+ 		Tire[] tires = new Tire[4];
+ 		Tire[] tires = new Tire[4];
+ 	}
+ 	
+ 	*Tire.java
+ 	@이걸넣어야함 (어노테이션만 바꿔주면 자동으로 값이 들어감)
+ 	*Tire2.java
+ 	
+ 3. 스프링 프로젝트 기본 구조
+	- src/main/java : 자바 메인 코드를 작성하는 곳
+	
+	- src/main/resources : 자바 메인 코드를 실행할 때 필요한 자원들을 저장하는곳(ex.가위바위보 전적)
+	
+	- src/test/java : 자바 테스트 코드를 작성하는 곳
+	
+	- src/test/resources : 자바 테스트 코드를 실행할 때 필요한 자원들을 저장하는곳
+	
+	- /WEB-INF/spring/root-context.xml
+		: 스프링 전체 설정 파일
+		: 이곳에 등록하는 것은 스프링 전체에서 전역변수처럼 접근할수있는 것이 된다
+	
+	- /WEB-INF/spring/appServlet/servlet-context.xml 
+		: 서블릿 설정 파일(DispatcherServlet에서만 가져다 사용하는 설정파일)
+		: 세세한 URL 매핑 정보를 등록할 수 있다
+	
+	- /WEB-INF/views : 컨트롤러에서 처리한 후 forward될 뷰 페이지들을 모아놓는곳
+	
+	- pom.xml : maven이 사용하는 xml 이다. 이곳에 적혀있는대로 프로젝트를 관리해준다.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

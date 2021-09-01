@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.hshome.Practice_Myself&apos; to &apos;com.hshome.project&apos;&#x0D;&#x0A;- Original project: &apos;Aaa&apos;&#x0D;&#x0A;- Original element: &apos;Aaa/src/main/java/com.hshome.Practice_Myself&apos;&#x0D;&#x0A;- Renamed element: &apos;Aaa/src/main/java/com.hshome.project&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.hshome.Practice_Myself&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hshome.Practice_Myself" name="com.hshome.project" qualified="false" references="true" stamp="1628251226156" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,27 @@
+02_HikariCP연결.txt
+
+# HikariCP Github를 참조하여 연결을 생성한다.
+
+	HikariConfig config = new HikariConfig();
+	config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521/XEPDB1");
+	config.setUsername("hr");
+	config.setPassword("1234");
+	config.addDataSourceProperty("cachePrepStmts", "true");
+	config.addDataSourceProperty("prepStmtCacheSize", "250");
+	config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+
+	HikariDataSource ds = new HikariDataSource(config);
+		
+
+# xml 방식으로는 다음과 같이 등록한다.(root-context에 등록)
+
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521/XEPDB1"></property>
+		<property name="username" value="hr"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+	
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig"></constructor-arg> <!-- 생성자에다가 hikariConfig라는 빈을 참조해서사용한다는것 -->
+	</bean>

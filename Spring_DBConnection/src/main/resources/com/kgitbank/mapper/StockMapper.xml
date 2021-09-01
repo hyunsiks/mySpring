@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!-- mapper를 새롭게 만들어서 db연결했다 -->
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.kgitbank.mapper.StockMapper">
+  
+  <!-- 여러 줄 꺼낼 때 -->
+  <select id="getStockList" resultType="com.kgitbank.model.Stock">
+        SELECT * FROM stock
+  </select>
+  
+  <!-- 한 행만 꺼낼 때 -->
+<!--   <select id="getStock" resultType="com.kgitbank.model.Stock"> -->
+<!--   	SELECT * FROM stock WHERE stock_id=#{id} -->
+<!--   </select> -->
+  
+  <insert id="insertStock">
+  	INSERT INTO stock(stock_id, stock_name, stock_price, stock_holdings) 
+  	VALUES
+  	(stock_seq.nextval,
+  	#{stock_name}, #{stock_price},
+  	#{stock_holdings})
+  </insert>
+  
+  <delete id="deleteStock">
+  	DELETE FROM stock where stock_name = '${stock_name}'
+  </delete>
+  
+  <update id="changeStock">
+	UPDATE STOCK SET stock_name = 'LG' where stock_name = '${stock_name}'
+  </update>
+  
+</mapper>

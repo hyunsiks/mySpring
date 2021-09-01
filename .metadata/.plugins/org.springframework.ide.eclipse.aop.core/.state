@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="Practice_SpringMVC"/>
+<aop-project name="Project_Site"/>
+<aop-project name="Aaa"/>
+<aop-project name="Spring_DBConnection"/>
+<aop-project name="Spring_REST"/>
+<aop-project name="TravelShare"/>
+</aop-reference-model>

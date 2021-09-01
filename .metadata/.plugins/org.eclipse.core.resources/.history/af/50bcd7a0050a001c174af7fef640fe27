@@ -1,0 +1,75 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시물 조회</title>
+</head>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/main_board.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
+<body>
+
+		<div class="notice_Popup">
+		   <div class="notice_cancel">
+			   <span class="material-icons-outlined "> close </span>
+		   </div>
+		   <div class="notice_textContainer">
+		       <div></div>
+		       <div class="notice_PopupTitle">${qna_view.title }</div>
+		       <hr>
+		       <div class="notice_PopupTop">
+		           <div class="notice_PopupImg">user_img</div>
+		           <div>
+		               <div class="notice_PopupId">${qna_view.writer }</div>
+<!-- 		               <hr> -->
+		               <div class="notice_PopupDate">date</div>
+		           </div>
+		           <div class="notice_cntBoard">
+			           <span class="material-icons-outlined">
+							visibility
+					   </span>
+			           <span class="notice_PopupCnt">viewcnt</span>
+		           </div>
+		       </div>
+		       <hr>
+		       <div class="notice_PopupText">${qna_view.content }</div>
+		  	</div>
+		  </div>
+		  
+	<label>글번호</label>
+	<div class="qna_view_qno">${qna_view.qno }</div>
+	
+	<label>제목</label>
+	${qna_view.title } <br>
+	
+	<label>작성자</label>
+	${qna_view.writer } <br>
+	
+	<label>내용</label>
+	${qna_view.content } <br>
+	
+	<div>
+		<a href="./qnaModify?qno=${qna_view.qno }">게시물 수정</a>
+		<a href="./qnaDelete?qno=${qna_view.qno }">게시물 삭제</a>
+	</div>
+	<div class="board_comment">
+		<div id="board_comment_tit" class="board_comment_tit">
+			<p>한줄댓글</p>
+		</div>
+		<div class="board_comment_write">
+			<form action="#" id="board_commentId">
+				<input type="text" id="board_commnet" name="board_commnet"
+					placeholder="한 줄 댓글을 남겨주세요." autocomplete="off"> <input type="hidden"
+					id="user_id" name="user_id" value="${id }"> <input
+					type="submit" name="board_commnet_submit" value="댓글남기기">
+			</form>
+		</div>
+		<div id="board_comment_show" class="board_comment_show"></div>
+	</div>
+	<script src="<%=request.getContextPath()%>/resources/js/qna_view.js?ver=1.09"></script>
+</body>
+</html>

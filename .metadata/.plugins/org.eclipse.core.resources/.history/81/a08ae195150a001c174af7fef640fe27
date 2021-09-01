@@ -1,0 +1,162 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시물 조회</title>
+</head>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/main_board.css">
+	
+<link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
+<body>
+
+
+		  
+<!-- 	<label>글번호</label> -->
+	<div class="qna_view_qno">${QnaViewModel.qno }</div>
+	
+<!-- 	<label>제목</label> -->
+<%-- 	${QnaViewModel.title } <br> --%>
+	
+<!-- 	<label>작성자</label> -->
+<%-- 	${QnaViewModel.writer } <br> --%>
+	
+<!-- 	<label>내용</label> -->
+<%-- 	${QnaViewModel.content } <br> --%>
+<!-- 		<label>내용</label> -->
+<%-- 	${QnaViewModel.user_id } <br> --%>
+<!-- 		<label>내용</label> -->
+<%-- 	${QnaViewModel.user_imgurl } <br> --%>
+<!-- 		<label>내용</label> -->
+<%-- 	${QnaViewModel.user_nickName } <br> --%>
+<!-- 	<div> -->
+<%-- 		<a href="./qnaModify?qno=${qna_view.qno }">게시물 수정</a> --%>
+<%-- 		<a href="./qnaDelete?qno=${qna_view.qno }">게시물 삭제</a> --%>
+<!-- 	</div> -->
+
+	<div id="board_clickPan">
+		<div onclick="imgClickRollback()" class="x_box">
+			<span class="material-icons-outlined "> close </span>
+		</div>
+		<div id="board_detailContent">
+			<div class="board_detailPan">
+				<div class="board_left_pan">
+					<div>
+						<label>제목</label>
+						${QnaViewModel.title } <br>
+					</div>
+					<hr style="color: black; width: 100%; margin-bottom: 50px;">
+					<div id="board_main_content" class="board_main_content">
+						<!-- 게시판 콘텐츠들이 들어가는 곳  -->
+						<label>내용</label>
+						${QnaViewModel.content }
+					</div>
+
+					<div class="board_comment">
+						<div id="board_comment_tit" class="board_comment_tit">
+							<p>한줄댓글</p>
+						</div>
+						<div class="board_comment_write">
+							<form action="#" id="board_commentId">
+								<input type="text" id="board_commnet" name="board_commnet"
+									placeholder="한 줄 댓글을 남겨주세요." autocomplete="off"> <input type="hidden"
+									id="user_id" name="user_id" value="${id }"> <input
+									type="submit" name="board_commnet_submit" value="댓글남기기">
+							</form>
+						</div>
+						<div id="board_comment_show" class="board_comment_show"></div>
+					</div>
+				</div>
+
+
+				<div class="board_right_pan">
+					<div id="board_user_info" class="board_user_info">
+						<img id="board_mainimg"
+							src="<%=request.getContextPath()%>${QnaViewModel.user_imgurl }"
+							alt="">
+					</div>
+					<div id="board_user_name" class="board_user_name">${QnaViewModel.user_nickName }</div>
+
+					<div id="board_content_id" class="board_content_id"></div>
+					<div id="board_title" class="board_title"></div>
+					<div class="board_sub_info">
+						<div class="board_sub_info2">
+							<div>
+								<span class="material-icons-outlined">visibility</span>
+								<div>조회수</div>
+							</div>
+							<div id="board_bestplace">${QnaViewModel.viewcnt }</div>
+						</div>
+						<div class="board_sub_info2">
+							<div>
+								<span class="material-icons-outlined">event</span>
+								<div>작성날짜</div>
+							</div>
+							<div id="board_besteat">${QnaViewModel.regdate }</div>
+						</div>
+					</div>
+
+					<div>
+						<div id="board_scrap_btn" class="board_scrap_btn">
+							<span class="material-icons-outlined board_like_img">
+								favorite </span>
+							<div>스크랩</div>
+						</div>
+					</div>
+
+					<div class="board_travelPlans">
+						<div id="singo" class="singo" >
+							<span class="material-icons singo_img"> lightbulb </span> <span
+								class="board_singo">신고하기</span>
+						</div>
+
+						<!-- 						<div class="board_Plans"> -->
+						<!-- 							<div class="board_Plans_tit">여행경로</div> -->
+						<!-- 							<div class="board_Plans_list"> -->
+						<!-- 								<div>여정1</div> -->
+						<!-- 							</div> -->
+						<!-- 							<div class="board_Plans_list"> -->
+						<!-- 								<div>여정2</div> -->
+						<!-- 							</div> -->
+						<!-- 							<div class="board_Plans_list"> -->
+						<!-- 								<div>여정3</div> -->
+						<!-- 							</div> -->
+						<!-- 							<div class="board_Plans_list"> -->
+						<!-- 								<div>여정4</div> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<jsp:include page="../footer/footer.jsp"></jsp:include>
+	
+	
+	
+	
+	
+<!-- 	<div class="board_comment"> -->
+<!-- 		<div id="board_comment_tit" class="board_comment_tit"> -->
+<!-- 			<p>한줄댓글</p> -->
+<!-- 		</div> -->
+<!-- 		<div class="board_comment_write"> -->
+<!-- 			<form action="#" id="board_commentId"> -->
+<!-- 				<input type="text" id="board_commnet" name="board_commnet" -->
+<!-- 					placeholder="한 줄 댓글을 남겨주세요." autocomplete="off"> <input type="hidden" -->
+<%-- 					id="user_id" name="user_id" value="${id }"> <input --%>
+<!-- 					type="submit" name="board_commnet_submit" value="댓글남기기"> -->
+<!-- 			</form> -->
+<!-- 		</div> -->
+<!-- 		<div id="board_comment_show" class="board_comment_show"></div> -->
+<!-- 	</div> -->
+	
+	
+	
+	<script src="<%=request.getContextPath()%>/resources/js/qna_view.js?ver=1.10"></script>
+</body>
+</html>

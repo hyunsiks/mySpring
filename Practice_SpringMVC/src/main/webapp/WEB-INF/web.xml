@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<!-- 모든 컨테이너(서블릿)에서 함께 사용하는 전역 파라미터 -->
+	<!-- 처음 설정되어있는 내용은 root-context에 있는 내용을 가져다 쓰겠다라는것 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<!-- 
+		처음 설정되어있는 것은 '/'으로 appServlet으로 모든것을 다 넣겠다는것 
+		appServlet이라는 이름의 클래스는 DispatcherServlet이다
+		즉 DispatcherServlet으로 모두 보내고
+		servlet-context.xml 을 확인하여 등록된 모든 것을 스캔한다는것
+	-->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- 한글깨짐현상때문에 넣음 -->
+	<filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>
+            org.springframework.web.filter.CharacterEncodingFilter
+    	</filter-class>
+    	<init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+	</filter>
+	<filter-mapping>
+	        <filter-name>encodingFilter</filter-name>
+	        <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>

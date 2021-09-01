@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="write_btn"/>
+			<item value="user_id"/>
+			<item value="board_commnet"/>
+			<item value="location"/>
+			<item value="admin_noticeUpdate"/>
+			<item value="notice_tbody"/>
+			<item value="session"/>
+			<item value="imgClickRollback"/>
+			<item value="box"/>
+			<item value="x-box"/>
+			<item value="qna_view_qno"/>
+			<item value="clickpan"/>
+			<item value="getNoticeOne"/>
+			<item value="qna_modify"/>
+			<item value="qna_selectComment"/>
+		</list>
+		<list key="replacehistory">
+			<item value="burger"/>
+			<item value="burger2"/>
+			<item value="notice_paging"/>
+			<item value="ver=2.85"/>
+			<item value="ver=2.84"/>
+			<item value="ver=2.83"/>
+			<item value="ver=2.82"/>
+			<item value="ver=2.73"/>
+			<item value=""/>
+			<item value="noticeContentUpdate"/>
+			<item value="noticeTitleUpdate"/>
+			<item value="table-bordered"/>
+			<item value="admin_allContainer"/>
+			<item value="ver=4.7"/>
+			<item value="#main_map"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="118"/>
+		<item key="DIALOG_Y_ORIGIN" value="381"/>
+		<item key="DIALOG_WIDTH" value="340"/>
+		<item key="DIALOG_HEIGHT" value="453"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>
